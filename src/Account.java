@@ -31,28 +31,28 @@ public class Account implements interfaces.Account {
     }
 
     @Override
-    public void CurrentBalance(String numberAccount){ // Método para ver o saldo atual
+    public void currentBalance(String numberAccount){ // Método para ver o saldo atual
         if(account.equals(numberAccount)){ // equals === verificação de strings
-            logger.Out("Seu saldo atual é de: " + this.balance);
+            logger.out("Seu saldo atual é de: " + this.balance);
         } else {
             System.out.println("Seu acesso está errado!");
         }
     }
 
     @Override
-    public void DrawBalance(double value){ // Método para sacar
+    public void drawBalance(double value){ // Método para sacar
         if(balance < value){
-            logger.Out("Você não tem saldo suficiente para isso");
+            logger.out("Você não tem saldo suficiente para isso");
         } else {
             this.balance = balance - value; // mesma coisa que balance = balance - value
-            logger.Out("Valor retirado foi de " + value + ", agora você possui um saldo de " + this.balance);
+            logger.out("Valor retirado foi de " + value + ", agora você possui um saldo de " + this.balance);
         }
     }
 
     @Override
-    public void DepositBalance(double value){
+    public void depositBalance(double value){
         this.balance = balance + value;
-        logger.Out("Você depositou " + value + ", agora sua conta tem um saldo de " + this.balance);
+        logger.out("Você depositou " + value + ", agora sua conta tem um saldo de " + this.balance);
     }
 
     @Override // sobrecreve por cima o print dessa classe
